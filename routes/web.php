@@ -14,21 +14,19 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('home');
+    return view('home', [
+        "title" => "Home",
+    ]);
 });
 
 Route::get('/about', function () {
     return view('about', [
-        "name" => "Devan Ferrel",
-        "email" => "dvn@gmail.com",
-        "image" => "profile.jpg",
+        "title" => "About",
     ]);
 });
 
 Route::get('/blog', function () {
-    return view('post');
-});
-
-Route::get('/laravel', function () {
-    return view('welcome');
+    return view('post', [
+        "title" => "Blog",
+    ]);
 });

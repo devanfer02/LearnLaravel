@@ -1,3 +1,11 @@
-body { 
-    background-color: cyan;
+.modified-nav-font a {
+    color: black;
+}
+
+#footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3px;
+    margin-bottom: 3px;
 }
