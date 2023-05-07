@@ -6,7 +6,7 @@
                 <div class="navbar-nav">
                     <a class="nav-link custom-nav {{ ($title==="Home") ? 'active' : '' }}" href="/">Home</a>
                     <a class="nav-link custom-nav {{ ($title==="About") ? 'active' : '' }}" href="/about">About</a>
-                    <a class="nav-link custom-nav {{ ($title==="Blog") ? 'active' : '' }}" href="/blog">Blog</a>
+                    <a class="nav-link custom-nav {{ ($title==="Blog") ? 'active' : '' }}" href="/posts">Blog</a>
                     <a class="nav-link custom-nav " href="/login">Logout</a>     
                 </div>
             </div>
