@@ -26,7 +26,67 @@ Route::get('/about', function () {
 });
 
 Route::get('/blog', function () {
-    return view('post', [
+    $blogPost = [
+        [
+            "title" => "Programming For Beginners",
+            "slug" => "first-title-post",
+            "author" => "Devan",
+            "body" => "Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            Quaerat magni cumque a laudantium quisquam? 
+            Illo doloremque tempora perspiciatis ipsum, 
+            quaerat esse veritatis sapiente dolores laboriosam asperiores ab, 
+            ullam exercitationem a?",
+        ],
+        [
+            "title" => "Algorithms and Data Structures",
+            "slug" => "second-title-post",
+            "author" => "Devan",
+            "body" => "Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            Quaerat magni cumque a laudantium quisquam? 
+            Illo doloremque tempora perspiciatis ipsum, 
+            quaerat esse veritatis sapiente dolores laboriosam asperiores ab, 
+            ullam exercitationem a?",
+        ],
+    ];
+    return view('posts', [
         "title" => "Blog",
+        "posts" => $blogPost
+    ]);
+});
+
+Route::get('post/{slug}', function ($slug) {
+    $blogPost = [
+        [
+            "title" => "Programming For Beginners",
+            "slug" => "first-title-post",
+            "author" => "Devan",
+            "body" => "Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            Quaerat magni cumque a laudantium quisquam? 
+            Illo doloremque tempora perspiciatis ipsum, 
+            quaerat esse veritatis sapiente dolores laboriosam asperiores ab, 
+            ullam exercitationem a?",
+        ],
+        [
+            "title" => "Algorithms and Data Structures",
+            "slug" => "second-title-post",
+            "author" => "Devan",
+            "body" => "Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            Quaerat magni cumque a laudantium quisquam? 
+            Illo doloremque tempora perspiciatis ipsum, 
+            quaerat esse veritatis sapiente dolores laboriosam asperiores ab, 
+            ullam exercitationem a?",
+        ],
+    ];
+
+    $new = [];
+    foreach ($blogPost as $post) {
+        if($post['slug'] === $slug) {
+            $new = $post;
+        }
+    }
+
+    return view('post', [
+        "title" => "Post ",
+        "post" => $new
     ]);
 });
