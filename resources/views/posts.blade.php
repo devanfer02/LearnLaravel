@@ -8,12 +8,12 @@
         @foreach ($posts as $post)
             <article class="card-body">
                 <h2>
-                    <a href="/post/{{ $post['slug'] }}">
+                    <a href="/post/{{ $post->id }}">
                         {{ $post['title'] }}
                     </a>
                 </h2>
-                <h5>{{ $post['author'] }}</h5>
-                <p>{{ $post['body'] }}</p>
+                <h5>{{ $post->author }}</h5>
+                <p>{{ $post->excerpt }}</p>
             </article>
         @endforeach
     </div>
